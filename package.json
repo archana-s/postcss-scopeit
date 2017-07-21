@@ -1,15 +1,17 @@
 {
   "name": "postcss-scopeit",
   "version": "0.0.3",
-  "description": "PostCSS plugin PLUGIN_DESC",
+  "description": "PostCSS plugin for adding a global scope to all selectors in the specified input",
   "keywords": [
     "postcss",
     "css",
-    "postcss-plugin"
+    "postcss-plugin",
+    "scoping",
+    "root"
   ],
   "author": "Archana Sankaranarayanan",
   "license": "MIT",
-  "repository": "GITHUB_NAME/PLUGIN_NAME",
+  "repository": "https://github.com/archana-s/postcss-scopeit",
   "bugs": {
     "url": "https://github.com/GITHUB_NAME/PLUGIN_NAME/issues"
   },

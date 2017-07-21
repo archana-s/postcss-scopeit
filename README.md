@@ -1,51 +1,32 @@
-# PostCSS Plugin Boilerplate
+# postcss-scopeit
 
-<img align="right" width="135" height="95"
-     title="Philosopher’s stone, logo of PostCSS"
-     src="http://postcss.github.io/postcss/logo-leftp.svg">
+This is a PostCSS plugin to add additional specificity to your specified CSS. 
+The plugin accepts a scope name and uses that to add the additional specificity.
 
-Сreate new PostCSS plugins in a few steps:
+For e.g.
 
-1. Clone this repository:
+```
+body * {
+  color: red;
+}
 
-```sh
-git clone https://github.com/postcss/postcss-plugin-boilerplate.git
+button.primary {
+  color: blue;
+  border: 1px solid black;
+}
 ```
 
-2. Execute the wizard script. It will ask you a few questions
-   and fill all files with your data.
+Running through this plugin with scope name of 'test' will alter it to be:
 
-```sh
-node ./postcss-plugin-boilerplate/start
+```
+body.test * {
+  color: red;
+}
+
+.test button.primary {
+  color: blue;
+  border: 1px solid black;
+}
 ```
 
-Call it with `--yarn` argument, if you prefer [yarn](https://yarnpkg.com/)
-package manager:
-
-```sh
-node ./postcss-plugin-boilerplate/start --yarn
-```
-
-Or use `--no-install` if you want to skip dependencies installation.
-
-3. Your plugin repository will now have a clean Git history.
-[Create the GitHub repository](https://github.com/new)
-and push your project there.
-
-4. Add your project to [Travis CI](https://travis-ci.org).
-
-5. Write some code to `index.js` and tests to `test.js`.
-
-6. Execute `npm test` command
-
-7. Add input and output CSS examples to `README.md`.
-
-8. Add options descriptions if your plugin has them.
-
-9. Fill `CHANGELOG.md` with initial version and release it to npm.
-
-10. Fork [PostCSS](https://github.com/postcss/postcss), add your plugin to the
-[Plugins list](https://github.com/postcss/postcss/blob/master/docs/plugins.md)
-and send a pull request.
-
-11. Follow [@PostCSS](https://twitter.com/postcss) to get the latest updates.
+This is typically helpful when components are developed by external parties for your web application. This can avoid style bleed between the component and its parent. 
