@@ -15,3 +15,21 @@ it('scopes selectors correctly when not attached to body', () => {
     });
 });
 
+it('attaches scope to body directly', () => {
+    return run('body *{color:red;}', 'body.lbmt *{color:red;}', {
+        scopeName: 'lbmt'
+    });
+});
+
+it('does not attach to :root', () => {
+    return run(':root{--color-primary:blue;}', ':root{--color-primary:blue;}', {
+        scopeName: 'lbmt'
+    });
+});
+
+it('scopes selectors that are chained', () => {
+    return run('h1,h2,h3,h4,h5{color:red;}', '.lbmt h1,.lbmt h2,.lbmt h3,.lbmt h4,.lbmt h5{color:red;}', {
+        scopeName: 'lbmt'
+    });
+});
+
