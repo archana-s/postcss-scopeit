@@ -33,3 +33,10 @@ it('scopes selectors that are chained', () => {
     });
 });
 
+it('does not affect animations/transitions', () => {
+    return run('@keyframes rollingColor {0% {opacity: 0.6;transform: scale(1);}}',
+     '@keyframes rollingColor {0% {opacity: 0.6;transform: scale(1);}}', {
+        scopeName: 'lbmt'
+    });
+});
+
