@@ -1,6 +1,6 @@
 {
   "name": "postcss-scopeit",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "PostCSS plugin for adding a global scope to all selectors in the specified input",
   "keywords": [
     "postcss",
